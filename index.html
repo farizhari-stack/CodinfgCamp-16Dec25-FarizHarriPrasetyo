@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Website Portofolio - Welcome to our beautiful website with modern Apple-style design">
+    <title>Website Portofolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/modal_scroll.css">
+</head>
+
+<body>
+    <!-- Animated Background -->
+    <div class="animated-bg">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <img src="images/logo.png" alt="FARRTZ Logo" class="logo-img">
+                <span class="logo-text">Website Portofolio</span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#profile" class="nav-link">Our Profile</a></li>
+                <li><a href="#headquarters" class="nav-link">Portfolio</a></li>
+                <li><a href="#contact" class="nav-link">Message Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="greeting animate-text">Hai saya Fariz,</span>
+                    <span class="welcome animate-text-delay">Welcome to Website Portofolio</span>
+                </h1>
+                <p class="hero-description animate-fade">Ini adalah website latihan pertama saya</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Get Started</a>
+                    <a href="#headquarters" class="btn btn-secondary">Learn More</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="floating-code" id="robot-container">
+                    <!-- 3D Robot will be rendered here -->
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <div class="scroll-indicator">
+                <span></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Headquarters Section -->
+    <section class="headquarters" id="headquarters">
+        <div class="section-container">
+            <h2 class="section-title">Our Headquarter</h2>
+            <div class="hq-grid">
+                <div class="hq-card" data-aos="fade-up">
+                    <div class="hq-image">
+                        <div class="hq-circle">
+                            <img src="images/jakarta.png" alt="Jakarta" class="hq-icon">
+                            <div class="circle-glow"></div>
+                        </div>
+                    </div>
+                    <h3 class="hq-name">Jakarta</h3>
+                    <p class="hq-desc">Kantor Pusat</p>
+                </div>
+                <div class="hq-card" data-aos="fade-up" data-delay="100">
+                    <div class="hq-image">
+                        <div class="hq-circle">
+                            <img src="images/bandung.png" alt="Bandung" class="hq-icon">
+                            <div class="circle-glow"></div>
+                        </div>
+                    </div>
+                    <h3 class="hq-name">Bandung</h3>
+                    <p class="hq-desc">Kantor Cabang</p>
+                </div>
+                <div class="hq-card" data-aos="fade-up" data-delay="200">
+                    <div class="hq-image">
+                        <div class="hq-circle">
+                            <img src="images/surabaya.png" alt="Surabaya" class="hq-icon">
+                            <div class="circle-glow"></div>
+                        </div>
+                    </div>
+                    <h3 class="hq-name">Surabaya</h3>
+                    <p class="hq-desc">Kantor Cabang</p>
+                </div>
+                <div class="hq-card" data-aos="fade-up" data-delay="300">
+                    <div class="hq-image">
+                        <div class="hq-circle">
+                            <img src="images/medan.png" alt="Medan" class="hq-icon">
+                            <div class="circle-glow"></div>
+                        </div>
+                    </div>
+                    <h3 class="hq-name">Medan</h3>
+                    <p class="hq-desc">Kantor Cabang</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="section-container">
+            <h2 class="section-title">Message Us</h2>
+            <div class="contact-wrapper">
+                <div class="contact-form-container">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="nama">Nama</label>
+                            <input type="text" id="nama" name="nama" placeholder="Nama" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="tanggal">Tanggal Lahir</label>
+                            <input type="date" id="tanggal" name="tanggal" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Jenis Kelamin</label>
+                            <div class="radio-group">
+                                <label class="radio-label">
+                                    <input type="radio" name="gender" value="Laki-Laki" checked>
+                                    <span class="radio-custom"></span>
+                                    Laki-Laki
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="gender" value="Perempuan">
+                                    <span class="radio-custom"></span>
+                                    Perempuan
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="pesan">Pesan</label>
+                            <textarea id="pesan" name="pesan" placeholder="Pesan" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-submit">
+                            <span>Submit</span>
+                            <div class="btn-shine"></div>
+                        </button>
+                    </form>
+                </div>
+                <div class="contact-preview">
+                    <div class="preview-card">
+                        <div class="preview-header">
+                            <div class="preview-dot"></div>
+                            <span>Preview</span>
+                        </div>
+                        <div class="preview-content">
+                            <p><strong>Current time :</strong> <span id="currentTime"></span></p>
+                            <p><strong>Nama :</strong> <span id="previewNama">-</span></p>
+                            <p><strong>Tanggal Lahir :</strong> <span id="previewTanggal">-</span></p>
+                            <p><strong>Jenis Kelamin :</strong> <span id="previewGender">Laki-Laki</span></p>
+                            <p><strong>Pesan :</strong> <span id="previewPesan">-</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <p class="footer-text">Created By <span class="highlight">RevoU</span></p>
+            <div class="footer-links">
+                <a href="#" class="footer-link">Privacy</a>
+                <a href="#" class="footer-link">Terms</a>
+                <a href="#" class="footer-link">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <div class="toast-icon">✓</div>
+        <div class="toast-message">Pesan berhasil dikirim!</div>
+    </div>
+
+    <!-- Three.js for 3D Animation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="js/script.js"></script>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scrollProgress"></div>
+    </div>
+
+    <!-- Welcome Modal -->
+    <div class="welcome-modal" id="welcomeModal">
+        <div class="welcome-content">
+            <h2 class="welcome-title">Welcome to Future</h2>
+            <p class="welcome-text">Experience our digital universe crafted with passion and precision.</p>
+            <button class="btn btn-primary" id="closeWelcomeBtn">
+                <span>Enter Experience</span>
+            </button>
+        </div>
+    </div>
+
+</body>
+
+</html>
