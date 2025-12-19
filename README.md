@@ -1,5 +1,12 @@
 # 🚀 Project CodingCamp - Next-Gen Personal Portfolio
 
+<div align="center">
+  <a href="https://farizhari-stack.github.io/CodinfgCamp-16Dec25-FarizHarriPrasetyo/">
+    <img src="https://img.shields.io/badge/✨_View_Live_Website-007AFF?style=for-the-badge&logo=github&logoColor=white" alt="View Live Website" height="50" />
+  </a>
+  <p><strong>👆 CLICK TO VISIT THE LIVE SITE 👆</strong></p>
+</div>
+
 > A stunning, interactive, and futuristic portfolio website created for **Project CodingCamp** featuring **Glassmorphism**, **3D Animations**, and **Apple-inspired Aesthetics**.
 
 ![Project Banner](https://via.placeholder.com/1200x400.png?text=Future+Ready+Portfolio) 
@@ -9,7 +16,7 @@
 
 Welcome to a digital experience designed to wow. This project isn't just a static website; it's a dynamic journey. Built with a focus on user experience and visual excellence, it combines modern web technologies to create a feeling of depth, motion, and elegance.
 
-**[Live Demo](#)** · **[Report Bug](#)** · **[Request Feature](#)**
+**[Live Demo](https://farizhari-stack.github.io/CodinfgCamp-16Dec25-FarizHarriPrasetyo/)** · **[Report Bug](#)** · **[Request Feature](#)**
 
 ---
 
