@@ -1,220 +1,244 @@
 <!DOCTYPE html>
-<html lang="id">
+
+<html class="dark" lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Website Portofolio - Welcome to our beautiful website with modern Apple-style design">
-    <title>Website Portofolio</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/modal_scroll.css">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Futuristic Life Dashboard</title>
+    <!-- BEGIN: External Scripts -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&amp;family=Inter:wght@300;400;600&amp;display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                        'tech': ['Orbitron', 'sans-serif'],
+                    },
+                    colors: {
+                        'glass-bg': 'rgba(2, 6, 23, 0.6)',
+                        'glass-border': 'rgba(56, 189, 248, 0.25)',
+                        'glow-blue': '#0ea5e9',
+                    },
+                    boxShadow: {
+                        'glow': '0 0 20px rgba(14, 165, 233, 0.3)',
+                        'heavy-glow': '0 0 30px rgba(14, 165, 233, 0.5)',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- END: External Scripts -->
+    <!-- BEGIN: Custom Styles -->
+    <link rel="stylesheet" href="css/style.css" data-purpose="futuristic-effects" />
+    <!-- END: Custom Styles -->
 </head>
 
-<body>
-    <!-- Animated Background -->
-    <div class="animated-bg">
-        <div class="gradient-orb orb-1"></div>
-        <div class="gradient-orb orb-2"></div>
-        <div class="gradient-orb orb-3"></div>
+<body class="text-slate-200 font-sans selection:bg-sky-500/30">
+    <!-- Decorative Background Elements -->
+    <div class="fixed inset-0 pointer-events-none opacity-[var(--glow-opacity)] overflow-hidden transition-opacity duration-1000">
+        <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-sky-500 blur-[120px] rounded-full opacity-60"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-900 blur-[120px] rounded-full opacity-40"></div>
     </div>
-
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="#" class="logo">
-                <img src="images/logo.png" alt="FARRTZ Logo" class="logo-img">
-                <span class="logo-text">Website Portofolio</span>
-            </a>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#home" class="nav-link active">Home</a></li>
-                <li><a href="#profile" class="nav-link">Our Profile</a></li>
-                <li><a href="#headquarters" class="nav-link">Portfolio</a></li>
-                <li><a href="#contact" class="nav-link">Message Us</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1 class="hero-title">
-                    <span class="greeting animate-text">Hai saya Fariz,</span>
-                    <span class="welcome animate-text-delay">Welcome to Website Portofolio</span>
+    <!-- BEGIN: Dashboard Container -->
+    <main class="container mx-auto px-6 py-12 max-w-6xl relative z-10">
+        <!-- BEGIN: Top Section -->
+        <header class="flex flex-col md:flex-row justify-between items-center mb-16 gap-6"
+            data-purpose="header-section">
+            <div class="text-center md:text-left">
+                <h2 class="text-sm font-tech text-sky-400 tracking-[0.3em] uppercase flex items-center justify-center md:justify-start gap-2"
+                    id="greeting">
+                    <span id="greeting-time">Initializing System...</span>
+                    <span id="greeting-name"
+                        class="cursor-pointer border-b border-dashed border-sky-400/50 hover:text-white transition-colors"
+                        title="Click to edit name">Operative</span>
+                </h2>
+                <h1 class="text-7xl font-tech font-bold glow-text mt-3 text-white tracking-tighter" id="clock">00:00:00
                 </h1>
-                <p class="hero-description animate-fade">Ini adalah website latihan pertama saya</p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary">Get Started</a>
-                    <a href="#headquarters" class="btn btn-secondary">Learn More</a>
-                </div>
+                <p class="text-slate-400 mt-2 font-medium tracking-[0.2em] uppercase text-xs" id="date">Monday, January
+                    01</p>
             </div>
-            <div class="hero-image">
-                <div class="floating-code" id="robot-container">
-                    <!-- 3D Robot will be rendered here -->
+            <div class="flex items-center gap-4">
+                <div class="flex flex-col items-end mr-4 hidden md:block">
+                    <span class="text-[10px] text-sky-500 font-tech">SYSTEM STATUS: OPTIMAL</span>
+                    <div class="w-32 h-1 bg-sky-500/20 mt-1 rounded-full overflow-hidden">
+                        <div class="w-2/3 h-full bg-sky-500 shadow-[0_0_8px_#0ea5e9]"></div>
+                    </div>
                 </div>
+                <button
+                    class="p-4 rounded-xl glass-card hover:bg-sky-500/20 transition-all border border-glass-border group shadow-glow"
+                    data-purpose="theme-toggle">
+                    <svg class="h-6 w-6 text-sky-400 group-hover:rotate-12 transition-transform" fill="none"
+                        stroke="currentColor" viewbox="0 0 24 24">
+                        <path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                    </svg>
+                </button>
             </div>
-        </div>
-        <div class="hero-scroll">
-            <div class="scroll-indicator">
-                <span></span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Headquarters Section -->
-    <section class="headquarters" id="headquarters">
-        <div class="section-container">
-            <h2 class="section-title">Our Headquarter</h2>
-            <div class="hq-grid">
-                <div class="hq-card" data-aos="fade-up">
-                    <div class="hq-image">
-                        <div class="hq-circle">
-                            <img src="images/jakarta.png" alt="Jakarta" class="hq-icon">
-                            <div class="circle-glow"></div>
-                        </div>
+        </header>
+        <!-- END: Top Section -->
+        <!-- BEGIN: Central Dashboard Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-16" data-purpose="main-grid">
+            <!-- BEGIN: Focus Timer Card -->
+            <section
+                class="glass-card rounded-[2.5rem] p-10 flex flex-col items-center justify-center border-glass-border shadow-heavy-glow scanlines overflow-hidden"
+                data-purpose="pomodoro-timer">
+                <div class="corner-bracket top-left"></div>
+                <div class="corner-bracket top-right"></div>
+                <div class="corner-bracket bottom-left"></div>
+                <div class="corner-bracket bottom-right"></div>
+                <h3 class="text-sky-400 text-xs font-tech tracking-[0.4em] uppercase mb-10 opacity-80">Neural Focus
+                    Module</h3>
+                <div class="relative w-72 h-72 flex items-center justify-center mb-10">
+                    <!-- Circular Progress (SVG) -->
+                    <svg class="absolute inset-0 w-full h-full -rotate-90 timer-glow">
+                        <circle class="text-slate-900/40" cx="144" cy="144" fill="transparent" r="132"
+                            stroke="currentColor" stroke-width="2"></circle>
+                        <circle class="text-sky-500 transition-all duration-1000" cx="144" cy="144" fill="transparent"
+                            id="timer-progress" r="132" stroke="currentColor" stroke-dasharray="829"
+                            stroke-dashoffset="0" stroke-linecap="round" stroke-width="6"></circle>
+                    </svg>
+                    <!-- Decorative Outer Ring -->
+                    <div
+                        class="absolute inset-[-10px] border border-sky-500/10 rounded-full animate-[spin_20s_linear_infinite]">
                     </div>
-                    <h3 class="hq-name">Jakarta</h3>
-                    <p class="hq-desc">Kantor Pusat</p>
-                </div>
-                <div class="hq-card" data-aos="fade-up" data-delay="100">
-                    <div class="hq-image">
-                        <div class="hq-circle">
-                            <img src="images/bandung.png" alt="Bandung" class="hq-icon">
-                            <div class="circle-glow"></div>
-                        </div>
+                    <div
+                        class="absolute inset-[-20px] border-t border-b border-sky-500/5 rounded-full animate-[spin_15s_linear_infinite_reverse]">
                     </div>
-                    <h3 class="hq-name">Bandung</h3>
-                    <p class="hq-desc">Kantor Cabang</p>
-                </div>
-                <div class="hq-card" data-aos="fade-up" data-delay="200">
-                    <div class="hq-image">
-                        <div class="hq-circle">
-                            <img src="images/surabaya.png" alt="Surabaya" class="hq-icon">
-                            <div class="circle-glow"></div>
-                        </div>
+                    <div class="flex flex-col items-center">
+                        <span class="text-6xl font-tech font-bold text-white tracking-tighter"
+                            id="timer-display">25:00</span>
+                        <span class="text-[10px] text-sky-500/60 font-tech mt-2 tracking-widest">EST. COMPLETION:
+                            11:36</span>
                     </div>
-                    <h3 class="hq-name">Surabaya</h3>
-                    <p class="hq-desc">Kantor Cabang</p>
                 </div>
-                <div class="hq-card" data-aos="fade-up" data-delay="300">
-                    <div class="hq-image">
-                        <div class="hq-circle">
-                            <img src="images/medan.png" alt="Medan" class="hq-icon">
-                            <div class="circle-glow"></div>
-                        </div>
+                <div class="flex gap-6 w-full max-w-xs">
+                    <button
+                        class="flex-1 py-4 bg-sky-600/10 border border-sky-500/40 rounded-2xl hover:bg-sky-500 hover:text-white hover:shadow-glow transition-all font-tech text-xs tracking-[0.2em] text-sky-400 uppercase"
+                        id="timer-start">Initiate</button>
+                    <button
+                        class="px-6 py-4 rounded-2xl glass-card transition-all font-tech text-xs tracking-[0.2em] uppercase"
+                        id="timer-reset">Reset</button>
+                </div>
+                <div class="mt-8 flex gap-3">
+                    <button
+                        class="text-[9px] font-tech px-3 py-1.5 glass-card rounded-lg transition-colors uppercase tracking-widest"
+                        onclick="setTimer(15)">15m</button>
+                    <button
+                        class="text-[9px] font-tech px-3 py-1.5 glass-card rounded-lg transition-colors uppercase tracking-widest"
+                        onclick="setTimer(25)">25m</button>
+                    <button
+                        class="text-[9px] font-tech px-3 py-1.5 glass-card rounded-lg transition-colors uppercase tracking-widest"
+                        onclick="setTimer(50)">50m</button>
+                </div>
+            </section>
+            <!-- END: Focus Timer Card -->
+            <!-- BEGIN: To-Do List Card -->
+            <section class="glass-card rounded-[2.5rem] p-10 border-glass-border shadow-heavy-glow flex flex-col"
+                data-purpose="todo-list">
+                <div class="corner-bracket top-left"></div>
+                <div class="corner-bracket top-right"></div>
+                <div class="corner-bracket bottom-left"></div>
+                <div class="corner-bracket bottom-right"></div>
+                <div class="flex justify-between items-center mb-10">
+                    <h3 class="text-sky-400 text-xs font-tech tracking-[0.4em] uppercase opacity-80">Daily Objectives
+                    </h3>
+                    <span class="text-[10px] text-slate-500 font-tech uppercase" id="task-counter">2 Active</span>
+                </div>
+                <div class="flex gap-3 mb-8">
+                    <div class="relative flex-1">
+                        <input
+                            class="w-full border rounded-2xl px-5 py-4 focus:ring-2 focus:ring-sky-500/50 focus:border-sky-500 transition-all outline-none"
+                            id="todo-input" placeholder="Transmit new objective..." type="text" />
                     </div>
-                    <h3 class="hq-name">Medan</h3>
-                    <p class="hq-desc">Kantor Cabang</p>
+                    <button
+                        class="bg-sky-600 hover:bg-sky-500 text-white px-5 rounded-2xl transition-all shadow-glow flex items-center justify-center active:scale-95"
+                        id="add-todo">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                            <path d="M12 4v16m8-8H4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                            </path>
+                        </svg>
+                    </button>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="section-container">
-            <h2 class="section-title">Message Us</h2>
-            <div class="contact-wrapper">
-                <div class="contact-form-container">
-                    <form class="contact-form" id="contactForm">
-                        <div class="form-group">
-                            <label for="nama">Nama</label>
-                            <input type="text" id="nama" name="nama" placeholder="Nama" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="tanggal">Tanggal Lahir</label>
-                            <input type="date" id="tanggal" name="tanggal" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Jenis Kelamin</label>
-                            <div class="radio-group">
-                                <label class="radio-label">
-                                    <input type="radio" name="gender" value="Laki-Laki" checked>
-                                    <span class="radio-custom"></span>
-                                    Laki-Laki
-                                </label>
-                                <label class="radio-label">
-                                    <input type="radio" name="gender" value="Perempuan">
-                                    <span class="radio-custom"></span>
-                                    Perempuan
-                                </label>
+                <ul class="space-y-4 overflow-y-auto max-h-[340px] pr-2 custom-scrollbar" id="todo-container">
+                    <!-- Sample Item -->
+                    <li
+                        class="flex items-center justify-between p-5 bg-slate-900/40 rounded-2xl border border-slate-800/50 group hover:border-sky-500/30 transition-all">
+                        <div class="flex items-center gap-4">
+                            <div class="relative flex items-center justify-center">
+                                <input
+                                    class="w-6 h-6 rounded-lg border-slate-700 bg-slate-950 text-sky-500 focus:ring-sky-500 cursor-pointer appearance-none border-2 checked:bg-sky-500 checked:border-sky-500 transition-all"
+                                    type="checkbox" />
+                                <svg class="absolute w-4 h-4 text-white pointer-events-none opacity-0 check-icon transition-opacity"
+                                    fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                    <path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="3"></path>
+                                </svg>
                             </div>
+                            <span class="text-slate-300 font-medium tracking-wide">Synchronize neural pathways</span>
                         </div>
-                        <div class="form-group">
-                            <label for="pesan">Pesan</label>
-                            <textarea id="pesan" name="pesan" placeholder="Pesan" rows="4" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-submit">
-                            <span>Submit</span>
-                            <div class="btn-shine"></div>
+                        <button
+                            class="text-slate-600 hover:text-red-400 transition-colors p-2 rounded-lg hover:bg-red-400/10">
+                            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                <path
+                                    d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                            </svg>
                         </button>
-                    </form>
-                </div>
-                <div class="contact-preview">
-                    <div class="preview-card">
-                        <div class="preview-header">
-                            <div class="preview-dot"></div>
-                            <span>Preview</span>
-                        </div>
-                        <div class="preview-content">
-                            <p><strong>Current time :</strong> <span id="currentTime"></span></p>
-                            <p><strong>Nama :</strong> <span id="previewNama">-</span></p>
-                            <p><strong>Tanggal Lahir :</strong> <span id="previewTanggal">-</span></p>
-                            <p><strong>Jenis Kelamin :</strong> <span id="previewGender">Laki-Laki</span></p>
-                            <p><strong>Pesan :</strong> <span id="previewPesan">-</span></p>
-                        </div>
-                    </div>
-                </div>
+                    </li>
+                </ul>
+            </section>
+            <!-- END: To-Do List Card -->
+        </div>
+        <!-- END: Central Dashboard Grid -->
+        <!-- BEGIN: Quick Links Grid -->
+        <section class="mt-8" data-purpose="quick-links">
+            <div class="flex items-center gap-4 mb-10">
+                <div class="h-[1px] flex-1 bg-gradient-to-r from-transparent via-sky-900/50 to-transparent"></div>
+                <h3 class="text-sky-400 text-[10px] font-tech tracking-[0.5em] uppercase whitespace-nowrap opacity-60">
+                    Neural Network Hub</h3>
+                <div class="h-[1px] flex-1 bg-gradient-to-r from-transparent via-sky-900/50 to-transparent"></div>
+                <button id="add-link-btn"
+                    class="ml-4 p-2 rounded-xl glass-card hover:bg-sky-500/20 text-sky-400 transition-all border border-glass-border">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6" id="quick-links-container">
+                <!-- Dynamic Quick Links will be injected here -->
+            </div>
+        </section>
+        <!-- END: Quick Links Grid -->
+    </main>
+    <!-- END: Dashboard Container -->
+
+    <!-- BEGIN: Custom Modal -->
+    <div id="custom-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/80 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300">
+        <div class="glass-card rounded-3xl p-8 w-full max-w-md border-glass-border shadow-heavy-glow transform scale-95 transition-transform duration-300 relative">
+            <h3 id="modal-title" class="text-sky-400 text-sm font-tech tracking-[0.2em] uppercase mb-6 glow-text">Input Required</h3>
+            <p id="modal-desc" class="text-slate-300 text-sm mb-6 hidden font-sans leading-relaxed"></p>
+            
+            <div id="modal-inputs" class="space-y-4 mb-8">
+                <!-- Inputs injected via JS -->
+            </div>
+
+            <div class="flex gap-4">
+                <button id="modal-cancel" class="flex-1 py-3 glass-card rounded-xl transition-all font-tech text-xs tracking-widest uppercase outline-none">Cancel</button>
+                <button id="modal-confirm" class="flex-1 py-3 bg-sky-600 hover:bg-sky-500 hover:shadow-glow text-white rounded-xl transition-all font-tech text-xs tracking-widest uppercase outline-none">Confirm</button>
             </div>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-container">
-            <p class="footer-text">Created By <span class="highlight">RevoU</span></p>
-            <div class="footer-links">
-                <a href="#" class="footer-link">Privacy</a>
-                <a href="#" class="footer-link">Terms</a>
-                <a href="#" class="footer-link">Contact</a>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Toast Notification -->
-    <div class="toast" id="toast">
-        <div class="toast-icon">✓</div>
-        <div class="toast-message">Pesan berhasil dikirim!</div>
     </div>
+    <!-- END: Custom Modal -->
 
-    <!-- Three.js for 3D Animation -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="js/script.js"></script>
-    <!-- Scroll Progress Bar -->
-    <div class="scroll-progress-container">
-        <div class="scroll-progress-bar" id="scrollProgress"></div>
-    </div>
-
-    <!-- Welcome Modal -->
-    <div class="welcome-modal" id="welcomeModal">
-        <div class="welcome-content">
-            <h2 class="welcome-title">Welcome to Future</h2>
-            <p class="welcome-text">Experience our digital universe crafted with passion and precision.</p>
-            <button class="btn btn-primary" id="closeWelcomeBtn">
-                <span>Enter Experience</span>
-            </button>
-        </div>
-    </div>
-
+    <!-- BEGIN: Application Scripts -->
+    <script src="js/script.js" data-purpose="app-logic"></script>
+    <!-- END: Application Scripts -->
 </body>
 
 </html>
